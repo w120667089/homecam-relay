@@ -1,0 +1,15 @@
+{
+  "name": "homecam-relay",
+  "version": "1.0.0",
+  "description": "家用监控中继服务器：在摄像端与查看端之间转发视频帧与控制指令",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

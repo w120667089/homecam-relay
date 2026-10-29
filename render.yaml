@@ -1,0 +1,17 @@
+# 一键部署到 Render（免费，长期可用）
+# 在 https://render.com 新建 Web Service，选择你的仓库并选用本文件即可。
+# Render 会分配一个固定的 https 地址（如 https://homecam-relay.onrender.com），
+# 把 wss:// 前缀 + 这个地址填进 App 的「⚙ 中继服务器设置」里（两端都填同一个）。
+services:
+  - type: web
+    name: homecam-relay
+    runtime: node
+    plan: free
+    region: oregon          # 可改为 singapore / frankfurt 等离你更近的区
+    nodeVersion: 18.x
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    envVars:
+      - key: PORT
+        value: 3000
